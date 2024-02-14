@@ -1,0 +1,38 @@
+header:
+  version: 1
+machine: raspberrypi3
+distro: poky
+target: core-image-minimal
+repos:
+  poky:
+    url: "https://github.com/yoctoproject/poky.git"
+    commit: d3b27346c3a4a7ef7ec517e9d339d22bda74349d
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+  meta-openembedded:
+    url: "https://github.com/openembedded/meta-openembedded.git"
+    commit: da9063bdfbe130f424ba487f167da68e0ce90e7d
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+  meta-raspberrypi:
+    url: "https://github.com/agherzan/meta-raspberrypi.git"
+    commit: fde68b24f08b0eac4ad4bfd3c461dc17fe3a263c
+    layers:
+      .:
+  meta-lutils:
+    url: "https://github.com/carlonluca/meta-lutils.git"
+    branch: master
+      .:
+local_conf_header:
+  license: |
+    LICENSE_FLAGS_ACCEPTED:append = "commercial synaptics-killswitch"
+  distro: |
+    DISTRO_FEATURES:append = " systemd webengine cups usrmerge"
+    DISTRO_FEATURES:remove = "x11 wayland vulkan bluetooth nfs ppp wifi"
+  systemd: |
+    VIRTUAL-RUNTIME_init_manager = "systemd"
+    VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
