@@ -10,8 +10,7 @@ inherit cargo
 SRC_URI += "git://github.com/carlonluca/cgrc.git;protocol=https;branch=master"
 SRCREV = "d870e7560bad9b05767a3fb6c0877da397c579c3"
 S = "${WORKDIR}/git"
-CARGO_SRC_DIR = ""
-
+CARGO_SRC_DIR = "cgrc-rust"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
@@ -92,12 +91,12 @@ SRC_URI += " \
 
 # FIXME: update generateme with the real MD5 of the license file
 LIC_FILES_CHKSUM = " \
-    file://GPL-3.0;md5=generateme \
+    file://GPL-3.0;md5=2fa8ec938a64df55404ba6a93b4a29c1 \
 "
 
 SUMMARY = "Configurable terminal text formatter"
 HOMEPAGE = "https://bugfreeblog.duckdns.org/2022/09/cgrc-formatting-output-in-the-terminal.html"
-LICENSE = "GPL-3.0"
+LICENSE = "GPL-3.0-only"
 
 # includes this file if it exists but does not fail
 # this is useful for anything you may want to override from
