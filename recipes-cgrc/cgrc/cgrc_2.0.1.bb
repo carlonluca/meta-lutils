@@ -91,7 +91,7 @@ SRC_URI += " \
 
 # FIXME: update generateme with the real MD5 of the license file
 LIC_FILES_CHKSUM = " \
-    file://GPL-3.0;md5=2fa8ec938a64df55404ba6a93b4a29c1 \
+    file://LICENSE;md5=2fa8ec938a64df55404ba6a93b4a29c1 \
 "
 
 SUMMARY = "Configurable terminal text formatter"
