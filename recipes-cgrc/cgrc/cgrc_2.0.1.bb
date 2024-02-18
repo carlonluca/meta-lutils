@@ -12,6 +12,7 @@ SRCREV = "d870e7560bad9b05767a3fb6c0877da397c579c3"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = "cgrc-rust"
 BB_STRICT_CHECKSUM = "0"
+INSANE_SKIP:${PN}:append = "already-stripped"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched
