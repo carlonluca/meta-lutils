@@ -9,7 +9,6 @@ inherit cargo
 # SRC_URI += "crate://crates.io/cgrc/2.0.3"
 SRC_URI += "git://github.com/carlonluca/cgrc.git;protocol=https;branch=master"
 SRCREV = "d870e7560bad9b05767a3fb6c0877da397c579c3"
-S = "${WORKDIR}/git"
 CARGO_SRC_DIR = "cgrc-rust"
 BB_STRICT_CHECKSUM = "0"
 INSANE_SKIP:${PN}:append = "already-stripped"
